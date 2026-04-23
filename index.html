@@ -324,17 +324,8 @@ function setLanguage(lang) {
   document.getElementById('venueAddress').innerText = d.venueAddress;
   document.getElementById('venueLink').innerText = d.mapText;
 
-  // Set appropriate maps URL based on device
-  const isIPhone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
   const mapsQuery = "Deluxe+Banquet+Mira+Road";
-
-  if (isIPhone) {
-    // Use Apple Maps for iPhone users
-    document.getElementById('venueLink').href = `http://maps.apple.com/?q=${mapsQuery}`;
-  } else {
-    // Use Google Maps for other devices
-    document.getElementById('venueLink').href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
-  }
+  document.getElementById('venueLink').href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 
   document.getElementById('languageModal').style.display = "none";
   document.getElementById('card').classList.add("invitation-bg");
