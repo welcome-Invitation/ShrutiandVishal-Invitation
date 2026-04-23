@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- FORCE LIGHT MODE -->
+<meta name="color-scheme" content="light">
+<title>Engagement Invitation - Shrutika & Vishal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&family=Tiro+Devanagari+Marathi:wght@400&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.gstatic.com/s/tirodevaragari/v1/4Zx42Z3bMJ7C3Tkq3rN7wRY2OA-zvV9W5L.ttf" as="font" type="font/ttf" crossorigin>
+
+<style>
+/* FORCE LIGHT MODE */
+:root {
+  color-scheme: light;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #faf6ef;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(8px, 3vw, 12px);
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  height: 100%;
+  padding: clamp(20px, 6vw, 36px) clamp(16px, 4vw, 20px);
+  border-radius: clamp(16px, 4vw, 20px);
+  border: 1px solid #e6d3a3;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+/* Background */
+.invitation-bg {
+  background:
+    linear-gradient(rgba(255,255,255,0.42), rgba(255,255,255,0.42)),
+    url("bg.png");
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: none !important;
+}
+
+/* Golden frame */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: clamp(8px, 2vw, 10px);
+  border-radius: clamp(12px, 3vw, 14px);
+  border: 1px solid rgba(212,175,55,0.45);
+  box-shadow: 0 0 18px rgba(212,175,55,0.2);
+  pointer-events: none;
+}
+
+/* TEXT */
+.title {
+  font-size: clamp(12px, 3.5vw, 14px);
+  color: #8a6a2f;
+  font-weight: 500;
+  margin-bottom: clamp(8px, 2vw, 10px);
+  line-height: 1.6;
+}
+
+.subtitle {
+  font-size: clamp(11px, 3vw, 13px);
+  color: #666;
+  margin-bottom: clamp(20px, 4vw, 24px);
+  line-height: 1.6;
+}
+
+.names {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(45px, 9vw, 50px);
+  background: linear-gradient(45deg, #7a5525, #4a2e16);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 
+    0 2px 5px rgba(0,0,0,0.2),
+    0 0 5px rgba(212,175,55,0.2);
+  margin: clamp(14px, 4vw, 18px) 0 clamp(10px, 3vw, 12px);
+  line-height: 1.3;
+}
+
+.line {
+  width: clamp(50px, 12vw, 60px);
+  height: 2px;
+  background: #d4af37;
+  margin: clamp(14px, 4vw, 18px) auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+  animation: shine 2.5s infinite;
+}
+
+.details {
+  font-size: clamp(13px, 4vw, 15px);
+  color: #444;
+  font-weight: 500;
+  margin-top: clamp(12px, 3vw, 14px);
+  line-height: 1.6;
+}
+
+/* VENUE */
+.venue {
+  margin-top: auto;
+  font-size: clamp(11px, 3vw, 13px);
+  color: #666;
+  line-height: 1.7;
+  padding-top: clamp(16px, 4vw, 18px);
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: clamp(12px, 3vw, 14px);
+  color: #b8962e;
+  text-decoration: none;
+  font-weight: 500;
+  padding: clamp(10px, 3vw, 12px) clamp(14px, 4vw, 16px);
+  border: 1px solid rgba(184,150,46,0.4);
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.map-btn:hover {
+  background: #d4af37;
+  color: #fff;
+}
+
+/* MARATHI */
+.lang-mr {
+  font-family: 'Tiro Devanagari Marathi', 'Noto Sans Devanagari', 'Mangal', 'Arial Unicode MS', 'DejaVu Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lang-mr .names {
+  font-size: clamp(40px, 9vw, 40px);
+}
+
+.lang-mr .title {
+  font-size: clamp(13px, 4vw, 15px);
+}
+
+.lang-mr .subtitle {
+  font-size: clamp(12px, 3.2vw, 13px);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 15px;
+}
+
+.modal-box {
+  background: #fff;
+  padding: clamp(24px, 8vw, 28px) 20px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  border: 1px solid rgba(212,175,55,0.4);
+}
+
+.lang-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 14px;
+  border-radius: 25px;
+  border: 1px solid #d4af37;
+  background: none;
+  font-size: clamp(14px, 4vw, 15px);
+  color: #8a6a2f;
+  cursor: pointer;
+}
+
+.lang-btn:active {
+  transform: scale(0.98);
+  background: #d4af37;
+  color: #fff;
+}
+
+/* ANIMATION */
+@keyframes shine {
+  100% { left: 100%; }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .card {
+    min-height: calc(var(--vh, 1vh) * 92);
+    padding: 24px 16px;
+  }
+
+  .names {
+    font-size: clamp(32px, 9vw, 42px);
+  }
+
+  .map-btn {
+    width: 100%;
+  }
+}
+
+/* EXTRA DARK MODE BLOCK (OVERRIDE) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #faf6ef;
+    color: #000;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(8px);
+  }
+
+  .card.invitation-bg {
+    background: 
+      linear-gradient(rgba(255,255,255,0.42), rgba(255,255,255,0.42)),
+      url("bg.png") center/cover no-repeat,
+      rgba(255,255,255,0.94);
+    background-attachment: fixed;
+    backdrop-filter: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="card" id="card">
+  <div id="invitationScreen">
+    <div class="title" id="title"></div>
+    <div class="subtitle" id="subtitle"></div>
+
+    <div class="names" id="names"></div>
+    <div class="line"></div>
+
+    <div class="details" id="details"></div>
+
+    <div class="venue">
+      <b id="venueName"></b><br>
+      <span id="venueAddress"></span><br>
+      <a id="venueLink" class="map-btn" target="_blank"></a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="languageModal" class="modal">
+  <div class="modal-box">
+    <h2 class="title">Select Language</h2>
+    <p class="subtitle">Choose your preferred language</p>
+
+    <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    <button class="lang-btn" onclick="setLanguage('mr')">मराठी</button>
+  </div>
+</div>
+
+<script>
+const content = {
+  en: {
+    title: "Together with our family, we invite you to our engagement ceremony",
+    subtitle: "A beautiful new journey begins... Join us in celebration!",
+    names: "Shrutika & Vishal",
+    details: "17 May 2026 • 5:00 PM",
+    venueName: "Deluxe Banquet",
+    venueAddress: "Mira Road (E), Mira Bhayandar - 401107",
+    mapText: "Open in Google Maps"
+  },
+  mr: {
+    title: "आमच्या आयुष्यातील सुंदर क्षण साजरा करण्यासाठी आपणांस आग्रहाचे निमंत्रण",
+    subtitle: "आमच्या नव्या प्रवासाच्या सुरुवातीला उपस्थित राहा, आपली उपस्थिती आम्हाला आनंद देईल 🙏",
+    names: "श्रुतिका & विशाल",
+    details: "१७ मे २०२६ • सायं. ५:००",
+    venueName: "Deluxe Banquet",
+    venueAddress: "मिरा रोड (पूर्व), मिरा भाईंदर – 401107",
+    mapText: "Google Maps मध्ये उघडा"
+  }
+};
+
+function setLanguage(lang) {
+  const d = content[lang];
+
+  document.getElementById('title').innerText = d.title;
+  document.getElementById('subtitle').innerText = d.subtitle;
+  document.getElementById('names').innerText = d.names;
+  document.getElementById('details').innerText = d.details;
+  document.getElementById('venueName').innerText = d.venueName;
+  document.getElementById('venueAddress').innerText = d.venueAddress;
+  document.getElementById('venueLink').innerText = d.mapText;
+
+  // Set appropriate maps URL based on device
+  const isIPhone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const mapsQuery = "Deluxe+Banquet+Mira+Road";
+
+  if (isIPhone) {
+    // Use Apple Maps for iPhone users
+    document.getElementById('venueLink').href = `http://maps.apple.com/?q=${mapsQuery}`;
+  } else {
+    // Use Google Maps for other devices
+    document.getElementById('venueLink').href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+  }
+
+  document.getElementById('languageModal').style.display = "none";
+  document.getElementById('card').classList.add("invitation-bg");
+
+  const invitationScreen = document.getElementById('invitationScreen');
+  invitationScreen.classList.remove("lang-mr");
+  if (lang === "mr") invitationScreen.classList.add("lang-mr");
+}
+
+// Mobile viewport fix
+function setVH() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', () => {
+  setTimeout(setVH, 100);
+});
+
+// iPhone Safari Detection & Redirect (NEW)
+function isIPhone() {
+  return /iPhone/i.test(navigator.userAgent);
+}
+
+function openInSafari() {
+  if (isIPhone()) {
+    const currentUrl = window.location.href;
+    const safariUrl = 'x-safari-https:' + currentUrl.replace(/^https?:\/\//, '');
+    if (confirm('For best experience, open in Safari?')) {
+      window.location.href = safariUrl;
+    }
+  }
+}
+
+// Trigger after short delay (after language modal)
+setTimeout(openInSafari, 500);
+
+// Font loading check for Marathi
+function checkMarathiFont() {
+  const testText = 'मराठी';
+  const testDiv = document.createElement('div');
+  testDiv.style.fontFamily = "'Tiro Devanagari Marathi', 'Noto Sans Devanagari', 'Mangal', 'Arial Unicode MS', 'DejaVu Sans', sans-serif";
+  testDiv.style.position = 'absolute';
+  testDiv.style.left = '-9999px';
+  testDiv.style.fontSize = '20px';
+  testDiv.textContent = testText;
+  document.body.appendChild(testDiv);
+
+  const width1 = testDiv.offsetWidth;
+  testDiv.style.fontFamily = "'Noto Sans Devanagari', 'Mangal', 'Arial Unicode MS', 'DejaVu Sans', sans-serif";
+  const width2 = testDiv.offsetWidth;
+
+  document.body.removeChild(testDiv);
+
+  // If widths are different, font loaded successfully
+  return width1 !== width2;
+}
+
+// Apply font fallback if Marathi font fails to load
+setTimeout(() => {
+  if (!checkMarathiFont()) {
+    const langMrElements = document.querySelectorAll('.lang-mr');
+    langMrElements.forEach(el => {
+      el.style.fontFamily = "'Noto Sans Devanagari', 'Mangal', 'Arial Unicode MS', 'DejaVu Sans', sans-serif";
+    });
+  }
+}, 3000); // Check after 3 seconds to allow font loading
+</script>
+
+</body>
+</html>
